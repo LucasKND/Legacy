@@ -1,0 +1,496 @@
+/* Law Firm Section Styles */
+section:nth-of-type(3) {
+    position: relative;
+    background: #121212;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* Background effect for law section */
+section:nth-of-type(3)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, #121212, #1a1a1a);
+    z-index: -1;
+}
+
+section:nth-of-type(3)::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    background-image: 
+        radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0%, transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
+    animation: rotate3d-section3 40s linear infinite;
+    transform-style: preserve-3d;
+    transform: rotateX(8deg) rotateY(5deg);
+    opacity: 0.3;
+    filter: blur(10px);
+}
+
+@keyframes rotate3d-section3 {
+    0% {
+        transform: rotateX(8deg) rotateY(5deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(8deg) rotateY(5deg) rotateZ(360deg);
+    }
+}
+
+/* Info section for law firm */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+    position: relative;
+}
+
+/* Gold accent light effects */
+section:nth-of-type(3) .info-section::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+section:nth-of-type(3) .info-section::after {
+    content: '';
+    position: absolute;
+    bottom: 70px;
+    left: 70px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Law firm card styling */
+section:nth-of-type(3) .info-card {
+    flex: 0 0 45%;
+    height: 800px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #D4AF37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+section:nth-of-type(3) .info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+section:nth-of-type(3) .view-project {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+section:nth-of-type(3) .view-project span {
+    color: #D4AF37;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #D4AF37;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+section:nth-of-type(3) .info-card:hover .view-project {
+    opacity: 1;
+}
+
+section:nth-of-type(3) .view-project span:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+section:nth-of-type(3) .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+    filter: contrast(105%) brightness(95%); /* Subtle filter for sophistication */
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+section:nth-of-type(3) .info-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+/* Law firm text styling */
+section:nth-of-type(3) .info-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    opacity: 0;
+    animation: none;
+    transform: translateX(-100px); /* Coming from left instead of right */
+}
+
+section:nth-of-type(3) .info-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 3px;
+    height: 100px;
+    background: linear-gradient(to bottom, #D4AF37, transparent);
+    border-radius: 3px;
+}
+
+section:nth-of-type(3) .info-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #D4AF37;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    opacity: 0;
+    animation: none;
+    transform: translateY(20px);
+    font-family: "Times New Roman", serif; /* Classic font for legal profession */
+    letter-spacing: 1px;
+}
+
+section:nth-of-type(3) .info-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #f5f5f5;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: none;
+    transform: translateY(20px);
+}
+
+/* Button styling for law section */ 
+.cta-button__projecttwo {
+    cursor: pointer;
+    width: 300px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 2px solid #D4AF37;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.16), 0 3px 6px rgba(212, 175, 55, 0.1);
+    color: #D4AF37;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+    opacity: 0;
+    animation: none;
+    transform: translateY(20px);
+    background-color: transparent;
+}
+  
+.cta-button__projecttwo:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #D4AF37;
+    z-index: -1;
+}
+  
+.cta-button__projecttwo:hover, .cta-button__projecttwo:focus {
+    color: #121212;
+}
+  
+.cta-button__projecttwo:hover:before, .cta-button__projecttwo:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+  
+.cta-button__projecttwo:active {
+    transform: scale(0.9);
+}
+
+/* Modal styling for law section */
+section:nth-of-type(3) .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+section:nth-of-type(3) .modal-content {
+    background: #1a1a1a;
+    width: auto;
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    position: relative;
+    padding: 0;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    animation: modalFadeIn 0.4s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #D4AF37;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:nth-of-type(3) .close-modal {
+    position: fixed;
+    right: 20px;
+    top: 15px;
+    font-size: 40px;
+    color: #D4AF37;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1010;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section:nth-of-type(3) .close-modal:hover {
+    color: #AA8C2C; /* Darker gold on hover */
+    background: rgba(0, 0, 0, 0.7);
+}
+
+section:nth-of-type(3) .modal-body {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+section:nth-of-type(3) .image-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #1a1a1a;
+}
+
+section:nth-of-type(3) .modal-image-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    transform-origin: top center;
+    cursor: default;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+/* Zoom controls for law section */
+section:nth-of-type(3) .zoom-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1010;
+    background-color: rgba(26, 26, 26, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #D4AF37;
+}
+
+section:nth-of-type(3) .zoom-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #D4AF37;
+    color: #121212;
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+section:nth-of-type(3) .zoom-btn:hover {
+    background-color: #AA8C2C;
+    transform: translateY(-2px);
+}
+
+/* More examples teaser for law section */
+section:nth-of-type(3) .more-examples-teaser {
+    margin-top: 60px;
+    text-align: center;
+    color: rgba(212, 175, 55, 0.9);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 0;
+    animation: none;
+    transform: translateY(20px);
+}
+
+section:nth-of-type(3) .more-examples-teaser p {
+    margin-bottom: 25px;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+    color: #D4AF37;
+}
+
+section:nth-of-type(3) .more-examples-teaser .arrow-down {
+    width: 30px;
+    height: 30px;
+    border-right: 3px solid #D4AF37;
+    border-bottom: 3px solid #D4AF37;
+    transform: rotate(45deg);
+    margin: 0 auto;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    40% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+    60% {
+        transform: translateY(-5px) rotate(45deg);
+    }
+}
+
+/* Animations for law section */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Add classes for elements that have come into view */
+section:nth-of-type(3) .info-text.visible {
+    animation: slideInFromLeft 1.2s ease forwards;
+}
+
+section:nth-of-type(3) .info-text h2.visible {
+    animation: fadeInWithDelay 0.8s ease forwards;
+}
+
+section:nth-of-type(3) .info-text p.visible {
+    animation: fadeInWithDelay 0.8s ease forwards;
+}
+
+section:nth-of-type(3) .cta-button__projecttwo.visible {
+    animation: fadeInWithDelay 0.8s ease forwards;
+}
+
+section:nth-of-type(3) .more-examples-teaser.visible {
+    animation: fadeInWithDelay 0.8s ease forwards;
+}
+
+@keyframes fadeInWithDelay {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    section:nth-of-type(3) .info-section {
+        flex-direction: column-reverse; /* Reverse order on mobile */
+        padding: 50px 20px;
+    }
+    
+    section:nth-of-type(3) .info-card {
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+        height: 400px; /* Smaller height on mobile */
+    }
+    
+    section:nth-of-type(3) .info-text {
+        transform: translateX(0); /* No offset on mobile */
+    }
+}
