@@ -553,4 +553,14 @@ section:nth-of-type(4) .more-examples-teaser.visible {
         margin-right: 10px;
         vertical-align: middle;
     }
+
+    section:nth-of-type(4) .cta-button__projectthree {
+        margin: 0 auto;
+        width: 100%;
+        font-size: 16px; /* Standardized font size */
+        padding: 12px 15px; /* Standardized padding */
+        box-sizing: border-box;
+        max-width: 100%; /* Ensure button doesn't overflow */
+        white-space: normal; /* Allow text to wrap if needed */
+    }
 }
