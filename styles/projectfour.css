@@ -553,23 +553,83 @@ section.bakery-section .grain-overlay {
 /* Media Queries */
 @media (max-width: 768px) {
     section.bakery-section .info-section {
-        flex-direction: column-reverse; /* Text first, image second on mobile */
-        padding: 50px 20px;
+        flex-direction: column;
+        padding: 40px 20px;
     }
     
     section.bakery-section .info-card {
         flex: 0 0 100%;
         margin-bottom: 30px;
-        height: 400px; /* Smaller height on mobile */
+        height: 350px; /* Smaller height on mobile */
+        order: 2; /* Card appears second */
     }
     
     section.bakery-section .info-text {
         transform: translateX(0); /* No offset on mobile */
+        order: 3; /* Text content appears third */
+        text-align: left; /* Changed from center to left */
     }
-
-    section.bakery-section .bakery-decorations::before,
-    section.bakery-section .bakery-decorations::after {
-        width: 60px;
-        height: 60px;
+    
+    section.bakery-section .info-text::before {
+        /* Remove center line decoration */
+        display: none;
+    }
+    
+    section.bakery-section .info-text h2 {
+        width: 100%;
+        margin: 20px auto 40px;
+        font-size: 32px;
+        order: 1; /* Title appears first */
+        position: relative;
+        text-align: center;
+        padding: 15px 0;
+        color: #704214; /* Richer brown color for better contrast */
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        letter-spacing: 1px;
+        border-top: 2px solid #8B7355;
+        border-bottom: 2px solid #8B7355;
+        background: linear-gradient(to right, rgba(243, 228, 198, 0.3), transparent, rgba(243, 228, 198, 0.3));
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+    }
+    
+    /* Add bread icon for mobile title */
+    section.bakery-section .info-text h2::before {
+        content: '🍞'; /* Bread icon */
+        font-size: 24px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    /* Style for extracted mobile title */
+    section.bakery-section .mobile-section-title {
+        text-align: center;
+        font-size: 32px;
+        color: #704214;
+        margin: 20px 0 30px;
+        padding: 15px 10px;
+        background: linear-gradient(to right, rgba(243, 228, 198, 0.3), transparent, rgba(243, 228, 198, 0.3));
+        border-top: 2px solid #8B7355;
+        border-bottom: 2px solid #8B7355;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-family: "Georgia", serif;
+        position: relative;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+    }
+    
+    section.bakery-section .mobile-section-title::before {
+        content: '🍞'; /* Bread icon */
+        font-size: 24px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    section.bakery-section .cta-button__projectfour {
+        margin: 0 auto;
+        width: 100%;
     }
 }

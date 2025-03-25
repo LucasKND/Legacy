@@ -36,6 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
+    
+    // Call the function to adjust mobile layout
+    adjustMobileLayout();
+    
+    // Run on window resize
+    window.addEventListener('resize', function() {
+        adjustMobileLayout();
+    });
 });
 
 // Create scroll indicators for each section
@@ -81,4 +89,44 @@ function updateScrollIndicators(scrollPos) {
             dots[index].classList.add('active');
         }
     });
+}
+
+// Function to adjust layout for mobile
+function adjustMobileLayout() {
+    if (window.innerWidth <= 768) {
+        const sections = document.querySelectorAll('section:not(.header)');
+        
+        sections.forEach(section => {
+            const infoSection = section.querySelector('.info-section');
+            const infoText = section.querySelector('.info-text');
+            const infoCard = section.querySelector('.info-card');
+            const title = infoText ? infoText.querySelector('h2') : null;
+            
+            if (infoSection && infoText && title && !section.querySelector('h2:not(.info-text h2)')) {
+                // Clone the title to preserve all styles and event handlers
+                const clonedTitle = title.cloneNode(true);
+                // Add special class for mobile titles
+                clonedTitle.classList.add('mobile-section-title');
+                
+                // Add the title before the info section
+                infoSection.parentNode.insertBefore(clonedTitle, infoSection);
+                
+                // Temporarily hide the original title
+                title.style.visibility = 'hidden';
+                title.style.position = 'absolute';
+                title.style.pointerEvents = 'none';
+            }
+        });
+    } else {
+        // Reset on desktop
+        document.querySelectorAll('.mobile-section-title').forEach(title => {
+            title.remove();
+        });
+        
+        document.querySelectorAll('.info-text h2').forEach(title => {
+            title.style.visibility = '';
+            title.style.position = '';
+            title.style.pointerEvents = '';
+        });
+    }
 }

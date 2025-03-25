@@ -480,17 +480,79 @@ section:nth-of-type(3) .more-examples-teaser.visible {
 /* Media Queries */
 @media (max-width: 768px) {
     section:nth-of-type(3) .info-section {
-        flex-direction: column-reverse; /* Reverse order on mobile */
-        padding: 50px 20px;
+        flex-direction: column;
+        padding: 40px 20px;
+        position: relative;
     }
     
     section:nth-of-type(3) .info-card {
         flex: 0 0 100%;
         margin-bottom: 30px;
-        height: 400px; /* Smaller height on mobile */
+        height: 350px; /* Smaller height on mobile */
+        order: 2; /* Card appears second */
     }
     
     section:nth-of-type(3) .info-text {
-        transform: translateX(0); /* No offset on mobile */
+        transform: translateX(0);
+        order: 3;
+        text-align: left; /* Changed from center to left */
+    }
+    
+    section:nth-of-type(3) .info-text::before {
+        /* Remove center line decoration */
+        display: none;
+    }
+    
+    section:nth-of-type(3) .info-text h2 {
+        width: 100%;
+        margin: 20px auto 40px;
+        font-size: 32px;
+        order: 1;
+        position: relative;
+        text-align: center;
+        padding: 15px 0;
+        color: #D4AF37;
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: "Times New Roman", serif;
+        /* Decorative elements for mobile title */
+        border-bottom: 2px solid #D4AF37;
+        border-top: 2px solid #D4AF37;
+    }
+    
+    /* Add icon to mobile title */
+    section:nth-of-type(3) .info-text h2::before {
+        content: '⚖️'; /* Scales of justice icon */
+        font-size: 24px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    /* Add decorative background to mobile titles */
+    section:nth-of-type(3) .mobile-section-title {
+        text-align: center;
+        font-size: 32px;
+        color: #D4AF37;
+        margin: 20px 0 30px;
+        padding: 15px 10px;
+        background: linear-gradient(to right, rgba(212, 175, 55, 0.1), transparent, rgba(212, 175, 55, 0.1));
+        border-bottom: 2px solid #D4AF37;
+        border-top: 2px solid #D4AF37;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: "Times New Roman", serif;
+        position: relative;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    section:nth-of-type(3) .mobile-section-title::before {
+        content: '⚖️'; /* Scales of justice icon */
+        font-size: 24px;
+        margin-right: 10px;
+        vertical-align: middle;
     }
 }

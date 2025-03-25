@@ -425,12 +425,93 @@ section:nth-of-type(2)::after {
 @media (max-width: 768px) {
     .info-section {
         flex-direction: column;
-        padding: 50px 20px;
+        padding: 40px 20px;
     }
     
     .info-card {
         flex: 0 0 100%;
         margin-bottom: 30px;
+        height: 350px; /* Smaller height for mobile */
+        order: 2; /* Card appears second */
+    }
+    
+    .info-text {
+        transform: translateX(0); /* No offset on mobile */
+        order: 3; /* Text content appears third */
+        text-align: left; /* Changed from center to left */
+    }
+    
+    .info-text::before {
+        /* Remove center line decoration */
+        display: none;
+    }
+    
+    .info-text h2 {
+        width: 100%;
+        margin: 20px auto 40px;
+        font-size: 32px;
+        order: 1; /* Title appears first */
+        /* Move the h2 outside to be the first element */
+        position: relative;
+        text-align: center;
+        padding-bottom: 15px;
+        color: #00A5E0;
+        text-shadow: 0 0 15px rgba(0, 165, 224, 0.2);
+        font-weight: 700;
+        letter-spacing: 1px;
+        /* Decorative elements for mobile title */
+        border-bottom: 2px solid #00A5E0;
+        border-top: 2px solid #00A5E0;
+        padding: 15px 0;
+    }
+    
+    /* Add icon to mobile title */
+    .info-text h2::before {
+        content: '🦷'; /* Dental icon */
+        font-size: 24px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    /* Add decorative background to mobile titles */
+    .mobile-section-title {
+        text-align: center;
+        font-size: 32px;
+        color: #00A5E0;
+        margin: 20px 0 30px;
+        padding: 15px 10px;
+        background: linear-gradient(to right, rgba(0, 165, 224, 0.1), transparent, rgba(0, 165, 224, 0.1));
+        border-bottom: 2px solid #00A5E0;
+        border-top: 2px solid #00A5E0;
+        font-weight: 700;
+        letter-spacing: 1px;
+        position: relative;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 0 15px rgba(0, 165, 224, 0.2);
+    }
+    
+    .mobile-section-title::before {
+        content: '🦷'; /* Dental icon */
+        font-size: 24px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    .cta-button__projectone {
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    /* Adjust spacing for better mobile view */
+    .info-text p {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    
+    .more-examples-teaser {
+        margin-top: 40px;
     }
 }
 
