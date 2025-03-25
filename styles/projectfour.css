@@ -1,5 +1,5 @@
 /* Bakery Section Styles - Brown, Light Gray, and Light Beige color scheme */
-section:nth-of-type(5) {
+section.bakery-section {
     position: relative;
     background: #f4f4f4; /* Light Gray background */
     overflow: hidden;
@@ -7,7 +7,7 @@ section:nth-of-type(5) {
 }
 
 /* Background effect for bakery section */
-section:nth-of-type(5)::before {
+section.bakery-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -19,7 +19,7 @@ section:nth-of-type(5)::before {
 }
 
 /* Additional decorative elements for bakery theme */
-section:nth-of-type(5) .bakery-decorations {
+section.bakery-section .bakery-decorations {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -31,7 +31,7 @@ section:nth-of-type(5) .bakery-decorations {
 }
 
 /* Wheat decoration in corners */
-section:nth-of-type(5) .bakery-decorations::before {
+section.bakery-section .bakery-decorations::before {
     content: '';
     position: absolute;
     top: 30px;
@@ -44,7 +44,7 @@ section:nth-of-type(5) .bakery-decorations::before {
     transform: rotate(-30deg);
 }
 
-section:nth-of-type(5) .bakery-decorations::after {
+section.bakery-section .bakery-decorations::after {
     content: '';
     position: absolute;
     bottom: 30px;
@@ -57,7 +57,7 @@ section:nth-of-type(5) .bakery-decorations::after {
     transform: rotate(30deg);
 }
 
-section:nth-of-type(5)::after {
+section.bakery-section::after {
     content: '';
     position: absolute;
     width: 200%;
@@ -88,7 +88,7 @@ section:nth-of-type(5)::after {
 }
 
 /* Info section for bakery */
-section:nth-of-type(5) .info-section {
+section.bakery-section .info-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,7 +100,7 @@ section:nth-of-type(5) .info-section {
 }
 
 /* Brown accent light effects */
-section:nth-of-type(5) .info-section::before {
+section.bakery-section .info-section::before {
     content: '';
     position: absolute;
     top: 50px;
@@ -112,7 +112,7 @@ section:nth-of-type(5) .info-section::before {
     pointer-events: none;
 }
 
-section:nth-of-type(5) .info-section::after {
+section.bakery-section .info-section::after {
     content: '';
     position: absolute;
     bottom: 70px;
@@ -125,7 +125,7 @@ section:nth-of-type(5) .info-section::after {
 }
 
 /* Bakery card styling */
-section:nth-of-type(5) .info-card {
+section.bakery-section .info-card {
     flex: 0 0 45%;
     height: 800px;
     background: linear-gradient(145deg, #F3E4C6, #e9d6b3);
@@ -142,12 +142,12 @@ section:nth-of-type(5) .info-card {
     cursor: pointer;
 }
 
-section:nth-of-type(5) .info-card:hover {
+section.bakery-section .info-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(139, 115, 85, 0.25), inset 0 1px 5px rgba(255, 255, 255, 0.9);
 }
 
-section:nth-of-type(5) .view-project {
+section.bakery-section .view-project {
     position: absolute;
     top: 0;
     left: 0;
@@ -162,7 +162,7 @@ section:nth-of-type(5) .view-project {
     border-radius: 8px;
 }
 
-section:nth-of-type(5) .view-project span {
+section.bakery-section .view-project span {
     color: #8B7355; /* Brown text */
     font-size: 24px;
     font-weight: bold;
@@ -174,15 +174,15 @@ section:nth-of-type(5) .view-project span {
     text-transform: uppercase;
 }
 
-section:nth-of-type(5) .info-card:hover .view-project {
+section.bakery-section .info-card:hover .view-project {
     opacity: 1;
 }
 
-section:nth-of-type(5) .view-project span:hover {
+section.bakery-section .view-project span:hover {
     background-color: rgba(139, 115, 85, 0.1);
 }
 
-section:nth-of-type(5) .card-image {
+section.bakery-section .card-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -197,12 +197,12 @@ section:nth-of-type(5) .card-image {
     box-shadow: 0 0 15px rgba(139, 115, 85, 0.2);
 }
 
-section:nth-of-type(5) .info-card:hover .card-image {
+section.bakery-section .info-card:hover .card-image {
     transform: scale(1.05);
 }
 
 /* Bakery text styling */
-section:nth-of-type(5) .info-text {
+section.bakery-section .info-text {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -213,7 +213,7 @@ section:nth-of-type(5) .info-text {
     transform: translateX(-100px); /* Coming from left */
 }
 
-section:nth-of-type(5) .info-text::before {
+section.bakery-section .info-text::before {
     content: '';
     position: absolute;
     top: 0;
@@ -224,7 +224,7 @@ section:nth-of-type(5) .info-text::before {
     border-radius: 3px;
 }
 
-section:nth-of-type(5) .info-text h2 {
+section.bakery-section .info-text h2 {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -239,7 +239,7 @@ section:nth-of-type(5) .info-text h2 {
 }
 
 /* Add a bread icon before the heading */
-section:nth-of-type(5) .info-text h2::before {
+section.bakery-section .info-text h2::before {
     content: '🥖';
     font-size: 28px;
     margin-right: 10px;
@@ -247,7 +247,7 @@ section:nth-of-type(5) .info-text h2::before {
     text-shadow: none;
 }
 
-section:nth-of-type(5) .info-text p {
+section.bakery-section .info-text p {
     font-size: 18px;
     line-height: 1.8;
     color: #5E4C39; /* Darker brown for text */
@@ -314,7 +314,7 @@ section:nth-of-type(5) .info-text p {
 }
 
 /* Modal styling for bakery section */
-section:nth-of-type(5) .modal {
+section.bakery-section .modal {
     display: none;
     position: fixed;
     top: 0;
@@ -334,7 +334,7 @@ section:nth-of-type(5) .modal {
         transparent 10px);
 }
 
-section:nth-of-type(5) .modal-content {
+section.bakery-section .modal-content {
     background: #f4f4f4; /* Light Gray */
     width: auto;
     max-width: 100%;
@@ -361,7 +361,7 @@ section:nth-of-type(5) .modal-content {
     }
 }
 
-section:nth-of-type(5) .close-modal {
+section.bakery-section .close-modal {
     position: fixed;
     right: 20px;
     top: 15px;
@@ -380,19 +380,19 @@ section:nth-of-type(5) .close-modal {
     justify-content: center;
 }
 
-section:nth-of-type(5) .close-modal:hover {
+section.bakery-section .close-modal:hover {
     color: #5E4C39; /* Darker brown on hover */
     background: rgba(243, 228, 198, 0.9);
 }
 
-section:nth-of-type(5) .modal-body {
+section.bakery-section .modal-body {
     flex: 1;
     position: relative;
     overflow: hidden;
     padding: 0;
 }
 
-section:nth-of-type(5) .image-container {
+section.bakery-section .image-container {
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -403,7 +403,7 @@ section:nth-of-type(5) .image-container {
     background-color: #f4f4f4; /* Light Gray */
 }
 
-section:nth-of-type(5) .modal-image-full {
+section.bakery-section .modal-image-full {
     width: 100%;
     height: auto;
     display: block;
@@ -417,7 +417,7 @@ section:nth-of-type(5) .modal-image-full {
 }
 
 /* Zoom controls for bakery section */
-section:nth-of-type(5) .zoom-controls {
+section.bakery-section .zoom-controls {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -430,7 +430,7 @@ section:nth-of-type(5) .zoom-controls {
     border: 1px solid #8B7355; /* Brown border */
 }
 
-section:nth-of-type(5) .zoom-btn {
+section.bakery-section .zoom-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -445,13 +445,13 @@ section:nth-of-type(5) .zoom-btn {
     transition: all 0.3s ease;
 }
 
-section:nth-of-type(5) .zoom-btn:hover {
+section.bakery-section .zoom-btn:hover {
     background-color: #5E4C39; /* Darker brown on hover */
     transform: translateY(-2px);
 }
 
 /* More examples teaser for bakery section */
-section:nth-of-type(5) .more-examples-teaser {
+section.bakery-section .more-examples-teaser {
     margin-top: 60px;
     text-align: center;
     color: rgba(139, 115, 85, 0.9);
@@ -464,14 +464,14 @@ section:nth-of-type(5) .more-examples-teaser {
     transform: translateY(20px);
 }
 
-section:nth-of-type(5) .more-examples-teaser p {
+section.bakery-section .more-examples-teaser p {
     margin-bottom: 25px;
     animation: fadeInUp 1.5s ease forwards;
     opacity: 0;
     color: #8B7355; /* Brown */
 }
 
-section:nth-of-type(5) .more-examples-teaser .arrow-down {
+section.bakery-section .more-examples-teaser .arrow-down {
     width: 30px;
     height: 30px;
     border-right: 3px solid #8B7355; /* Brown */
@@ -506,23 +506,23 @@ section:nth-of-type(5) .more-examples-teaser .arrow-down {
 }
 
 /* Add classes for elements that have come into view */
-section:nth-of-type(5) .info-text.visible {
+section.bakery-section .info-text.visible {
     animation: slideInFromLeft 1.2s ease forwards;
 }
 
-section:nth-of-type(5) .info-text h2.visible {
+section.bakery-section .info-text h2.visible {
     animation: fadeInWithDelay 0.8s ease forwards;
 }
 
-section:nth-of-type(5) .info-text p.visible {
+section.bakery-section .info-text p.visible {
     animation: fadeInWithDelay 0.8s ease forwards;
 }
 
-section:nth-of-type(5) .cta-button__projectfour.visible {
+section.bakery-section .cta-button__projectfour.visible {
     animation: fadeInWithDelay 0.8s ease forwards;
 }
 
-section:nth-of-type(5) .more-examples-teaser.visible {
+section.bakery-section .more-examples-teaser.visible {
     animation: fadeInWithDelay 0.8s ease forwards;
 }
 
@@ -538,7 +538,7 @@ section:nth-of-type(5) .more-examples-teaser.visible {
 }
 
 /* Add grain texture overlay to section */
-section:nth-of-type(5) .grain-overlay {
+section.bakery-section .grain-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -552,23 +552,23 @@ section:nth-of-type(5) .grain-overlay {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    section:nth-of-type(5) .info-section {
+    section.bakery-section .info-section {
         flex-direction: column-reverse; /* Text first, image second on mobile */
         padding: 50px 20px;
     }
     
-    section:nth-of-type(5) .info-card {
+    section.bakery-section .info-card {
         flex: 0 0 100%;
         margin-bottom: 30px;
         height: 400px; /* Smaller height on mobile */
     }
     
-    section:nth-of-type(5) .info-text {
+    section.bakery-section .info-text {
         transform: translateX(0); /* No offset on mobile */
     }
 
-    section:nth-of-type(5) .bakery-decorations::before,
-    section:nth-of-type(5) .bakery-decorations::after {
+    section.bakery-section .bakery-decorations::before,
+    section.bakery-section .bakery-decorations::after {
         width: 60px;
         height: 60px;
     }

@@ -1,0 +1,69 @@
+/* Global page styling with scroll snap */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Apply scroll-snap-align to all sections */
+section {
+    scroll-snap-align: start;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh; /* Ensure sections take up at least full viewport height */
+}
+
+/* Adjust header section for scroll snap */
+.header {
+    scroll-snap-align: start;
+}
+
+/* Add a subtle scroll indicator */
+.scroll-indicator {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+.scroll-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator-dot.active {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.3);
+}
+
+/* Adjust animation speeds to work well with scroll snap */
+.fade-in {
+    animation-duration: 0.7s; /* Slightly faster animation for better feel with scroll snap */
+}
+
+/* Ensure content is properly centered within each snapped section */
+section > div {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-snap-type: y mandatory; /* Stricter snap on mobile */
+    }
+}
